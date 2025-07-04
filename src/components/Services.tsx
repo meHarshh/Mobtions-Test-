@@ -1,14 +1,14 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Gamepad2, Gift, Globe, TrendingUp, Network, ArrowRight, Zap, Rocket } from 'lucide-react';
+import { Gamepad2, Gift, Globe, TrendingUp, Network, ArrowRight, Zap, Send, Rocket } from 'lucide-react';
 
 const Services = () => {
   const services = [
     {
       icon: Gamepad2,
       title: 'Zyrocraft',
-      subtitle: 'Game Studio',
-      description: 'Cutting-edge casual games with strategic ad monetization through CPC and CPM partnerships.',
+      subtitle: 'Game Studio · Retention & Growth',
+      description: 'Cutting-edge casual games built to retain users and fuel consistent engagement through strategic ad monetization.',
       features: ['Casual Game Development', 'Ad Monetization', 'Brand Partnerships', 'Performance Campaigns'],
       gradient: 'from-blue-500 to-blue-600',
       bgGradient: 'from-blue-50 to-blue-100',
@@ -17,8 +17,8 @@ const Services = () => {
     {
       icon: Gift,
       title: 'Coinflow',
-      subtitle: 'Offer Wall App',
-      description: 'Innovative reward platform creating win‑win ecosystems for users, advertisers, and partners.',
+      subtitle: 'Offer Wall App · Bulk Installs Fast',
+      description: 'Reward-based platform engineered for driving high-volume installs in minimal time using targeted incentivization.',
       features: ['User Rewards System', 'App Downloads', 'Service Registrations', 'Targeted Offers'],
       gradient: 'from-orange-500 to-red-500',
       bgGradient: 'from-orange-50 to-red-50',
@@ -27,8 +27,8 @@ const Services = () => {
     {
       icon: Globe,
       title: 'GamezHub',
-      subtitle: 'HTML5 Gaming Platform',
-      description: 'Exclusive gaming library with Google Ads integration and WebView technology for seamless integration.',
+      subtitle: 'HTML5 Gaming Platform · Repeat Usage Engine',
+      description: 'Attractive game library where users return again and again to play—driving high retention and repeat sessions.',
       features: ['HTML5 Games', 'Google Ads Integration', 'WebView Technology', 'Revenue Sharing'],
       gradient: 'from-yellow-500 to-orange-500',
       bgGradient: 'from-yellow-50 to-orange-50',
@@ -37,39 +37,41 @@ const Services = () => {
     {
       icon: TrendingUp,
       title: 'Traffhit',
-      subtitle: 'Content & Ad Network',
-      description: 'Finance, health, fitness, and news platforms monetized through native ads, banners, and video ads.',
+      subtitle: 'Content & Ad Network · Trust Through Content',
+      description: 'Delivers valuable and reliable content to earn user trust, then monetizes effectively through premium ad formats.',
       features: ['Native Discovery Ads', 'Banner Advertising', 'Video Ads', 'Targeted Campaigns'],
       gradient: 'from-green-500 to-blue-500',
       bgGradient: 'from-green-50 to-blue-50',
       link: 'https://traffhit.com/',
     },
     {
-      icon: Rocket,
+      icon: Send,
       title: 'EngageX',
-      subtitle: 'User Acquisition Platform',
-      description: 'Performance-driven platform to scale mobile apps through intelligent user acquisition and data-backed optimization..',
-      features: ['Scalable App Growth', 'AI-Driven Targeting', 'Real-Time Performance Insights', 'Global Traffic Access'],
-      gradient: 'from-purple-500 to-indigo-600',
+      subtitle: 'Campaign Suite · User Acquisition Hub',
+      description: 'Complete platform for advertisers to create, manage, and optimize campaigns to promote their apps and services.',
+      features: ['Campaign Creation', 'User Acquisition', 'Analytics Dashboard', 'Custom Targeting'],
+      gradient: 'from-purple-500 to-indigo-500',
       bgGradient: 'from-purple-50 to-indigo-50',
       link: 'https://engagex.in/',
     },
     {
-      icon: Network,
+      icon: Rocket,
       title: 'Mobtions',
-      subtitle: 'Performance Marketing',
-      description: '1Powering performance marketing for 15 years — trusted by thousands of affiliates and top brands worldwide.',
-      features: ['On Time Payment', '100% Direct Campaigns', '24/7 Support', 'Real Time Reporting Dashboard'],
+      subtitle: 'Affiliate Marketing · Monetization Engine',
+      description: 'A full-scale affiliate marketing engine connecting advertisers with high-performing publishers for scalable results.',
+      features: ['Affiliate Network', 'Media Buying', 'Lead Generation', 'CPC & CPA Optimization'],
       gradient: 'from-pink-500 to-red-500',
       bgGradient: 'from-pink-50 to-red-50',
       link: 'https://mobtions.com/',
     },
   ];
 
+  const randomLink = () => (Math.random() < 0.5 ? '#contact' : 'https://mobtions.affise.com/v2/sign/up');
+
   return (
     <section id="services" className="py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        {/* Enhanced Section Header */}
+        {/* Section Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-orange-50 border border-blue-200 rounded-full px-6 py-2 mb-6">
             <Zap className="w-5 h-5 text-orange-500" />
@@ -79,7 +81,14 @@ const Services = () => {
             Our <span className="gradient-text">Business Verticals</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto font-medium leading-relaxed">
-            Six distinct divisions working together to <span className="text-blue-600 font-bold">revolutionize digital entertainment</span> and marketing
+            Six focused verticals designed to{' '}
+            <a href={randomLink()} className="text-blue-600 font-bold hover:underline">
+              supercharge your growth
+            </a>{' '}
+            across entertainment and{' '}
+            <a href={randomLink()} className="text-orange-500 font-bold hover:underline">
+              marketing
+            </a>
           </p>
         </div>
 
@@ -129,7 +138,7 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Enhanced Affiliate Network Section */}
+        {/* Affiliate Network Section */}
         {/* <Card className="bg-gradient-to-r from-blue-50 via-white to-orange-50 border-2 border-blue-200 shadow-2xl relative overflow-hidden">
           <div className="absolute inset-0 shimmer"></div>
           <CardHeader className="text-center pb-6 relative z-10">
@@ -140,13 +149,19 @@ const Services = () => {
               <span className="gradient-text">Affiliate Ad Network</span>
             </CardTitle>
             <CardDescription className="text-xl md:text-2xl text-gray-700 font-medium">
-              Bridging advertisers and publishers with our <span className="text-blue-600 font-bold">extensive network</span>
+              Bridging advertisers and publishers with our{' '}
+              <a href={randomLink()} className="text-blue-600 font-bold hover:underline">
+                extensive network
+              </a>
             </CardDescription>
           </CardHeader>
           <CardContent className="text-center relative z-10">
             <p className="text-gray-700 text-lg mb-8 max-w-3xl mx-auto leading-relaxed font-medium">
-              Our affiliate ad network serves as the backbone connecting advertisers with over <span className="text-orange-600 font-bold">5,000 registered affiliates</span>,
-              creating mutually beneficial partnerships while optimizing revenue streams for all stakeholders.
+              Our affiliate ad network serves as the backbone connecting advertisers with over{' '}
+              <a href={randomLink()} className="text-orange-600 font-bold hover:underline">
+                5,000 registered affiliates
+              </a>
+              , creating mutually beneficial partnerships while optimizing revenue streams for all stakeholders.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button

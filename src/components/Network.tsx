@@ -1,13 +1,15 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { BarChart3, DollarSign, Users, Zap, Star } from 'lucide-react';
+// import Link from 'next/link';
+
+const redirectLink = () => (Math.random() > 0.5 ? '#contact' : 'https://mobtions.affise.com/v2/sign/up');
 
 const Network = () => {
   const networkStats = [
     {
       icon: Users,
-      title: '5,000+',
+      title: '10,000+',
       subtitle: 'Registered Affiliates',
       description: 'Growing network of trusted partners worldwide',
       gradient: 'from-blue-500 to-blue-600',
@@ -35,6 +37,15 @@ const Network = () => {
     },
   ];
 
+  const highlightedLink = (text: string, color: string) => (
+    <a
+      href={redirectLink()}
+      className={`text-${color}-600 font-bold hover:underline underline-offset-4 hover:decoration-${color}-600`}
+    >
+      {text}
+    </a>
+  );
+
   return (
     <section id="network" className="py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
@@ -48,13 +59,13 @@ const Network = () => {
             Our <span className="gradient-text">Partner Network</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto font-medium leading-relaxed">
-            Join <span className="text-blue-600 font-bold">thousands of successful partners</span> in our comprehensive advertising ecosystem
+            Join {highlightedLink('thousands of successful partners', 'blue')} in our comprehensive advertising ecosystem
           </p>
         </div>
 
         {/* Enhanced Network Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {networkStats.map((stat, index) => (
+          {networkStats.map((stat) => (
             <Card key={stat.title} className="card-hover bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 shadow-xl hover:shadow-2xl text-center group overflow-hidden">
               <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <CardHeader className="pb-4 relative z-10">
@@ -78,7 +89,7 @@ const Network = () => {
             <CardHeader className="relative z-10">
               <CardTitle className="text-3xl font-bold text-gray-900 mb-3">For Advertisers</CardTitle>
               <p className="text-gray-700 text-lg font-medium">
-                Reach your target audience across our <span className="text-blue-600 font-bold">diversified platform ecosystem</span>
+                Reach your target audience across our {highlightedLink('diversified platform ecosystem', 'blue')}
               </p>
             </CardHeader>
             <CardContent className="relative z-10">
@@ -112,7 +123,7 @@ const Network = () => {
             <CardHeader className="relative z-10">
               <CardTitle className="text-3xl font-bold text-gray-900 mb-3">For Publishers</CardTitle>
               <p className="text-gray-700 text-lg font-medium">
-                Monetize your traffic with our <span className="text-orange-600 font-bold">high-converting campaigns</span>
+                Monetize your traffic with our {highlightedLink('high-converting campaigns', 'orange')}
               </p>
             </CardHeader>
             <CardContent className="relative z-10">

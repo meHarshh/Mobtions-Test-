@@ -4,29 +4,32 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Send, Zap, Star } from 'lucide-react';
+import { Send, Zap, Star } from 'lucide-react';
 
 const Contact = () => {
   const formRef = useRef(null);
   const [submitted, setSubmitted] = useState(false);
 
+  const partnerLink = 'https://mobtions.affise.com/v2/sign/up';
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      'service_pip69bj',
-      'template_ihk5184',
-      formRef.current,
-      'UlF4rzpqcPG7w406r' // Replace this
-    )
-    .then(() => {
-      setSubmitted(true);
-      formRef.current.reset();
-    })
-    .catch((error) => {
-      console.error('EmailJS Error:', error);
-      alert('Something went wrong. Please try again.');
-    });
+    emailjs
+      .sendForm(
+        'service_pip69bj',
+        'template_ihk5184',
+        formRef.current,
+        'UlF4rzpqcPG7w406r'
+      )
+      .then(() => {
+        setSubmitted(true);
+        formRef.current.reset();
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        alert('Something went wrong. Please try again.');
+      });
   };
 
   return (
@@ -41,14 +44,20 @@ const Contact = () => {
             Partner <span className="gradient-text">With Us</span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto font-medium leading-relaxed">
-            Ready to <span className="text-blue-600 font-bold">unlock new revenue streams?</span> Let's discuss how Mobtions can help grow your business.
+            Ready to{' '}
+            <a
+              href={partnerLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 font-bold hover:underline underline-offset-4 hover:decoration-blue-600"
+            >
+              unlock new revenue streams?
+            </a>{' '}
+            Let's discuss how Mobtions can help grow your business.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact Info Cards */}
-          {/* ... (your existing contact info cards remain unchanged) ... */}
-
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <Card className="bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 shadow-2xl hover:shadow-3xl group overflow-hidden">
@@ -56,7 +65,15 @@ const Contact = () => {
               <CardHeader className="relative z-10">
                 <CardTitle className="text-3xl font-bold text-gray-900 mb-2">Get In Touch</CardTitle>
                 <p className="text-gray-700 text-lg font-medium">
-                  Tell us about your business and how we can <span className="text-blue-600 font-bold">work together</span>
+                  Tell us about your business and how we can{' '}
+                  <a
+                    href={partnerLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 font-bold hover:underline underline-offset-4 hover:decoration-blue-600"
+                  >
+                    work together
+                  </a>
                 </p>
               </CardHeader>
 
@@ -71,22 +88,41 @@ const Contact = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div>
                         <label className="text-base font-bold mb-2 block text-gray-800">Name</label>
-                        <Input name="name" placeholder="Your full name" required className="border-2 border-gray-300 focus:border-blue-500 text-gray-800 font-medium py-3" />
+                        <Input
+                          name="name"
+                          placeholder="Your full name"
+                          required
+                          className="border-2 border-gray-300 focus:border-blue-500 text-gray-800 font-medium py-3"
+                        />
                       </div>
                       <div>
                         <label className="text-base font-bold mb-2 block text-gray-800">Email</label>
-                        <Input name="email" type="email" placeholder="your@email.com" required className="border-2 border-gray-300 focus:border-blue-500 text-gray-800 font-medium py-3" />
+                        <Input
+                          name="email"
+                          type="email"
+                          placeholder="your@email.com"
+                          required
+                          className="border-2 border-gray-300 focus:border-blue-500 text-gray-800 font-medium py-3"
+                        />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                       <div>
                         <label className="text-base font-bold mb-2 block text-gray-800">Company</label>
-                        <Input name="company" placeholder="Your company name" className="border-2 border-gray-300 focus:border-blue-500 text-gray-800 font-medium py-3" />
+                        <Input
+                          name="company"
+                          placeholder="Your company name"
+                          className="border-2 border-gray-300 focus:border-blue-500 text-gray-800 font-medium py-3"
+                        />
                       </div>
                       <div>
                         <label className="text-base font-bold mb-2 block text-gray-800">Whatsapp Number</label>
-                        <Input name="whatsapp" placeholder="Your Whatsapp Number" className="border-2 border-gray-300 focus:border-blue-500 text-gray-800 font-medium py-3" />
+                        <Input
+                          name="whatsapp"
+                          placeholder="Your Whatsapp Number"
+                          className="border-2 border-gray-300 focus:border-blue-500 text-gray-800 font-medium py-3"
+                        />
                       </div>
                     </div>
 
@@ -101,7 +137,10 @@ const Contact = () => {
                       />
                     </div>
 
-                    <Button type="submit" className="mt-6 w-full btn-gradient text-white text-xl py-6 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all duration-300">
+                    <Button
+                      type="submit"
+                      className="mt-6 w-full btn-gradient text-white text-xl py-6 rounded-full font-bold shadow-xl hover:shadow-2xl transition-all duration-300"
+                    >
                       <Zap className="mr-2 h-6 w-6" />
                       Send Message
                       <Send className="ml-2 h-6 w-6" />
@@ -109,6 +148,22 @@ const Contact = () => {
                   </form>
                 )}
               </CardContent>
+            </Card>
+          </div>
+
+          {/* Contact Info Cards (optional if you want them, otherwise remove this block) */}
+          <div className="space-y-6">
+            <Card className="p-6 bg-gradient-to-r from-blue-50 to-blue-100 border border-blue-200 shadow-lg">
+              <h4 className="text-lg font-bold text-gray-900 mb-1">Email</h4>
+              <p className="text-gray-700 text-sm">mediabuyer@mobtions.com</p>
+            </Card>
+            <Card className="p-6 bg-gradient-to-r from-orange-50 to-orange-100 border border-orange-200 shadow-lg">
+              <h4 className="text-lg font-bold text-gray-900 mb-1">Phone</h4>
+              <p className="text-gray-700 text-sm">+91 88807 79916</p>
+            </Card>
+            <Card className="p-6 bg-gradient-to-r from-gray-100 to-white border border-gray-200 shadow-lg">
+              <h4 className="text-lg font-bold text-gray-900 mb-1">Address</h4>
+              <p className="text-gray-700 text-sm">Bangalore, India</p>
             </Card>
           </div>
         </div>

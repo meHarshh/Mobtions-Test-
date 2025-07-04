@@ -1,4 +1,3 @@
-
 import { Separator } from '@/components/ui/separator';
 
 const Footer = () => {
@@ -7,15 +6,24 @@ const Footer = () => {
     { name: 'Coinflow', description: 'Offer Wall App' },
     { name: 'GamezHub', description: 'Gaming Platform' },
     { name: 'Traffhit', description: 'Content Network' },
+    { name: 'Mobtions', description: 'Affiliate Network' },
   ];
 
   const quickLinks = [
-    'About Us',
-    'Services',
-    'Partnership',
-    'Contact',
-    'Privacy Policy',
-    'Terms of Service',
+    { name: 'About Us', href: '#about' },
+    { name: 'Services', href: '#services' },
+    { name: 'Partnership', href: '#network' },
+    { name: 'Contact', href: '#contact' },
+    {
+      name: 'Privacy Policy',
+      href: '/uploads/Privacy Policy Mobtions.pdf',
+      external: true,
+    },
+    {
+      name: 'Terms of Service',
+      href: '/uploads/Terms of Service Mobtions.pdf',
+      external: true,
+    },
   ];
 
   const contactInfo = [
@@ -32,7 +40,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <img 
-                src="/lovable-uploads/34daace0-d3a1-4a82-b4bd-6d25ccaf02b5.png" 
+                src="/uploads/34daace0-d3a1-4a82-b4bd-6d25ccaf02b5.png" 
                 alt="Mobtions Logo" 
                 className="h-15 w-auto max-w-[195px] object-contain"
               />
@@ -41,7 +49,7 @@ const Footer = () => {
               A diversified digital entertainment and marketing conglomerate powering the future of online engagement.
             </p>
             <div className="text-sm text-gray-300">
-              <div className="gradient-text font-semibold">5,000+ Active Affiliates</div>
+              <div className="gradient-text font-semibold">10,000+ Active Affiliates</div>
               <div>Trusted Partner Network</div>
             </div>
           </div>
@@ -64,10 +72,24 @@ const Footer = () => {
             <h3 className="font-semibold mb-4 text-white">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-sm text-gray-300 hover:text-orange-400 transition-colors">
-                    {link}
-                  </a>
+                <li key={link.name}>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-gray-300 hover:text-orange-400 transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-sm text-gray-300 hover:text-orange-400 transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -90,7 +112,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-300">
           <div>
-            © 2024 Mobtions. All rights reserved.
+            © 2025 Mobtions. All rights reserved.
           </div>
           <div className="mt-4 md:mt-0">
             Empowering digital growth through innovative partnerships
