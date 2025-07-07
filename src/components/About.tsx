@@ -31,7 +31,7 @@ const About = () => {
 
   const stats = [
     {
-      number: '5,000+',
+      number: '10,000+',
       label: 'Active Affiliates',
       subtext: 'Worldwide network',
       gradient: 'from-blue-50 to-blue-100 border-blue-200',

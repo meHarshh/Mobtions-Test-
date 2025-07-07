@@ -40,10 +40,11 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <img 
-                src="/uploads/34daace0-d3a1-4a82-b4bd-6d25ccaf02b5.png" 
-                alt="Mobtions Logo" 
-                className="h-15 w-auto max-w-[195px] object-contain"
-              />
+  src="/uploads/mobtions-og.png" 
+  alt="Mobtions Logo" 
+  className="h-15 w-auto max-w-[195px] object-contain"
+/>
+
             </div>
             <p className="text-gray-300 text-sm mb-4">
               A diversified digital entertainment and marketing conglomerate powering the future of online engagement.

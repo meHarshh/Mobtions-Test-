@@ -27,9 +27,7 @@ const Header = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <div className="flex items-center space-x-2">
-              <img
-                src="/lovable-uploads/34daace0-d3a1-4a82-b4bd-6d25ccaf02b5.png"
-                alt="Mobtions Logo"
+              <img src="/uploads/mobtions-og.png" alt="Mobtions Logo" 
                 className="h-18 w-auto max-w-[230px] object-contain"
               />
             </div>

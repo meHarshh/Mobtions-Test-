@@ -1,7 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { BarChart3, DollarSign, Users, Zap, Star } from 'lucide-react';
-// import Link from 'next/link';
 
 const redirectLink = () => (Math.random() > 0.5 ? '#contact' : 'https://mobtions.affise.com/v2/sign/up');
 
@@ -49,7 +48,7 @@ const Network = () => {
   return (
     <section id="network" className="py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        {/* Enhanced Section Header */}
+        {/* Section Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-orange-50 border border-blue-200 rounded-full px-6 py-2 mb-6">
             <Star className="w-5 h-5 text-orange-500 fill-orange-500" />
@@ -63,7 +62,7 @@ const Network = () => {
           </p>
         </div>
 
-        {/* Enhanced Network Stats */}
+        {/* Network Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {networkStats.map((stat) => (
             <Card key={stat.title} className="card-hover bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 shadow-xl hover:shadow-2xl text-center group overflow-hidden">
@@ -82,8 +81,9 @@ const Network = () => {
           ))}
         </div>
 
-        {/* Enhanced Partnership Options */}
+        {/* Advertiser & Publisher Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Advertiser Card */}
           <Card className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-200 shadow-xl hover:shadow-2xl group overflow-hidden">
             <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <CardHeader className="relative z-10">
@@ -111,13 +111,16 @@ const Network = () => {
                   Real-time analytics and optimization
                 </li>
               </ul>
-              <Button className="w-full btn-gradient text-white font-bold py-4 text-lg rounded-full shadow-lg">
-                <Zap className="mr-2 h-5 w-5" />
-                Start Advertising
-              </Button>
+              <a href="#contact">
+                <Button className="w-full btn-gradient text-white font-bold py-4 text-lg rounded-full shadow-lg">
+                  <Zap className="mr-2 h-5 w-5" />
+                  Start Advertising
+                </Button>
+              </a>
             </CardContent>
           </Card>
 
+          {/* Publisher Card */}
           <Card className="bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-200 shadow-xl hover:shadow-2xl group overflow-hidden">
             <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <CardHeader className="relative z-10">
@@ -145,10 +148,16 @@ const Network = () => {
                   Dedicated account management
                 </li>
               </ul>
-              <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-4 text-lg rounded-full shadow-lg transition-all duration-300 hover:scale-105">
-                <Star className="mr-2 h-5 w-5 fill-white" />
-                Join as Publisher
-              </Button>
+              <a
+                href="https://mobtions.affise.com/v2/sign/up"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-4 text-lg rounded-full shadow-lg transition-all duration-300 hover:scale-105">
+                  <Star className="mr-2 h-5 w-5 fill-white" />
+                  Join as Publisher
+                </Button>
+              </a>
             </CardContent>
           </Card>
         </div>
